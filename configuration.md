@@ -68,13 +68,17 @@ Specify the filename of the log file.
 	  filename: /tmp/files/log/tests.log
 	  
 ## TerserLoggerHandler
-A handler that logs informations about messages by extracting special values.
+A handler that logs information about messages by extracting special values.
+The tersers are defined as a list.
 
-Specify the filename of the log file. 
+Specify the filename of the log file, and the keys (tersers).
 
 
 	terser-logger-handler:
 	  filename: /tmp/files/log/terser-tests.log
+	  tersers:
+        - MSH-9-2
+        - PID-18
 	  
 ## WaitHandler
 A handler that waits for a delay. The `scope` allows to define if the handler have to wait for all the messages or for a pourcent of processed messages.
