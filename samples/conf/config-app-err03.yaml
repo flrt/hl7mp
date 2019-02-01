@@ -1,0 +1,22 @@
+#
+# Configuration file with error
+#
+
+hl7-consumer: mllp-server
+
+mllp-server:
+  listen-port: 8888
+  listen-address: localhost
+
+run-handlers:
+  - ack-handler
+  - logger-handler
+
+ack-handler:
+  ack-aa: 0.5
+  ack-ae: 0.2
+  ack-ar: 0.3
+  filename: log/err3-ack.log
+
+logger-handler:
+  filename: log/err3-log.log

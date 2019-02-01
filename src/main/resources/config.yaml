@@ -1,0 +1,38 @@
+hl7-consumer: mllp-server
+
+dir-client:
+  dir-path: /Users/fred/dev/test/ADT
+  dir-filename-pattern: ".*\\.hl7"
+
+mllp-server:
+  listen-port: 8888
+  listen-address: localhost
+
+run-handlers:
+- handler: logger
+- handler: terser-logger
+- handler: wait
+- handler: backup
+- handler: ack
+
+logger-handler:
+  filename: /tmp/tests.log
+
+terser-logger-handler:
+  filename: /tmp/terser-tests.log
+
+wait-handler:
+  delay: 3
+  scope: 0.5
+  filename: /tmp/wait.log
+
+ack-handler:
+  ack-aa: 0.33
+  ack-ae: 0.33
+  ack-ar: 0.33
+  filename: /tmp/ack.log
+
+backup-handler:
+  directory: /tmp/bankup-adt
+
+

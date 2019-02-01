@@ -1,0 +1,23 @@
+hl7-consumer: dir-client
+
+dir-client:
+  dir-path: files/hl7
+  filename-pattern: ".*?[.]hl7"
+
+run-handlers:
+  - logger-handler
+  - terser-logger-handler
+  - mllp-client-handler
+
+logger-handler:
+  filename: log/app12-log.log
+
+terser-logger-handler:
+  filename: log/app12-tersers.log
+  tersers:
+    - MSH-9-2
+    - PID-18
+
+mllp-client-handler:
+  listen-address: localhost
+  listen-port: 8904

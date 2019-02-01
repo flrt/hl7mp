@@ -1,0 +1,11 @@
+hl7-consumer: dir-client
+
+dir-client:
+  dir-path: files/hl7
+  dir-filename-pattern: ".*?[.]hl7"
+
+run-handlers:
+  - logger-handler
+
+logger-handler:
+  filename: log/app10-log.log

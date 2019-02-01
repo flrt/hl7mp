@@ -1,0 +1,20 @@
+hl7-consumer: mllp-server
+
+mllp-server:
+  listen-port: 8906
+  listen-address: localhost
+
+run-handlers:
+  - wait-handler
+  - ack-handler
+
+wait-handler:
+  delay: 20
+  scope: 0.2
+  filename: log/app6-wait.log
+
+ack-handler:
+  ack-aa: 1.0
+  ack-ae: 0.0
+  ack-ar: 0.0
+  filename: log/app6-ack.log

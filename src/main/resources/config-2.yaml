@@ -1,0 +1,32 @@
+hl7-consumer: dir-client
+
+dir-client:
+  dir-path: /Users/fred/dev/test/ADT
+  dir-filename-pattern: ".*\\.hl7"
+
+mllp-server:
+  listen-port: 8888
+  listen-address: localhost
+
+run-handlers:
+- handler: logger
+- handler: terser-logger
+- handler: tempo
+- handler: ack
+
+logger-handler:
+  filename: /tmp/tests.log
+
+terser-logger-handler:
+  filename: /tmp/terser-tests.log
+
+tempo-handler:
+  duration: 10
+  scope: 100
+
+ack-handler:
+  aa: 100
+  ae: 0
+  ar: 0
+
+

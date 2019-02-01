@@ -1,0 +1,16 @@
+{
+  "AE": [
+    "App Error : DB connexion KO",
+    "App Error : server is gone!",
+    "App Error : kernel is out of control",
+    "busy, doing something else...",
+    "Patient unknown",
+    "Visit does'nt exist"
+  ],
+  "AR": [
+    "Unsupported Message Type",
+    "Unsupported Event Code",
+    "Unsupported Processing ID",
+    "Format not accepted"
+  ]
+}

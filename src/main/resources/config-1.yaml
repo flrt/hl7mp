@@ -1,0 +1,36 @@
+hl7-consumer: ftp-client
+
+ftp-client:
+  ftp-server: localhost
+  ftp-user: toto
+  ftp-passwd: TOTO
+  ftp-port: 22
+  ftp-directory: hl7
+  ftp-filename-pattern: ".*\\.hl7"
+
+mllp-server:
+  listen-port: 8888
+  listen-address: localhost
+
+run-handlers:
+- handler: logger
+- handler: mini-logger
+- handler: tempo
+- handler: ack
+
+logger-handler:
+  filename: tests.log
+
+mini-logger-handler:
+  filename: mini-tests.log
+
+tempo-handler:
+  duration: 10
+  scope: 100
+
+ack-handler:
+  aa: 100
+  ae: 0
+  ar: 0
+
+

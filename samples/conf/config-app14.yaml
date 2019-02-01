@@ -1,0 +1,14 @@
+hl7-consumer: mllp-server
+
+mllp-server:
+  listen-port: 8888
+  listen-address: localhost
+
+run-handlers:
+  - ack-handler
+
+ack-handler:
+  ack-aa: 1.0
+  ack-ae: 0.0
+  ack-ar: 0.0
+  filename: log/app14-ack.log
