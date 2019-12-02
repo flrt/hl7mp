@@ -45,6 +45,7 @@ public class MLLPClientHandler implements Handler {
             try {
                 Message response = initiator.sendAndReceive(message);
                 String responseString = this.parser.encode(response);
+                responseString = responseString.replace("\r", "\n");
 
                 logger.info("Response received : \n\n" + responseString);
 
