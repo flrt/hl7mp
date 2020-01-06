@@ -92,6 +92,10 @@ Be aware of the used ports in MLLP connections.
 For convenience, the ports in range `8900-8999` are forwarded. That means that if you defined a server/client using a port in these range, nothing to do with the docker forwarding port parameter.
 Otherwise, you have to define the forwarding explicitly.
 
+Get the container
+
+    docker pull flrt/hl7mp
+    
 If you have defined a MLLP server as a consumer with a port, for instance:
 
     mllp-server:
@@ -99,7 +103,7 @@ If you have defined a MLLP server as a consumer with a port, for instance:
        
 Ok, nothing to do. Start the container with
 
-    $ docker run -ti --rm -v {$PWD}:/home hl7mp conf/config-app01.yaml
+    $ docker run -ti --rm -v {$PWD}:/home/hl7mp flrt/hl7mp conf/config-app01.yaml
 
 If you have defined a port outside the range, for instance: 
 
@@ -108,12 +112,12 @@ If you have defined a port outside the range, for instance:
 
 Declare it:
 
-    $ docker run -ti --rm -p 9533:9533 -v {$PWD}:/home hl7mp conf/config-app01.yaml
+    $ docker run -ti --rm -p 9533:9533 -v {$PWD}:/home/hl7mp flrt/hl7mp conf/config-app01.yaml
 
 ### Default Configuration file
 If your configuration file is `conf/config.yaml` you can omit it in the docker run command, as it's the default filename.
 
-    $ docker run -ti --rm -v {$PWD}:/home hl7mp 
+    $ docker run -ti --rm -v {$PWD}:/home/hl7mp flrt/hl7mp 
 
 
 # Licence 
